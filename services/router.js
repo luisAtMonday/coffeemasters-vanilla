@@ -24,17 +24,14 @@ const Router = {
     let content;
     switch(route) {
       case '/':
-        content = document.createElement('h1');
-        content.textContent = 'Menu';
+        content = document.createElement('menu-page');
         break;
       case '/order':
-        content = document.createElement('h1');
-        content.textContent = 'Your Order';
+        content = document.createElement('order-page');
         break;
       default:
         if(route.startsWith('/product/')) {
-          content = document.createElement('h1');
-          content.textContent = 'Details';
+          content = document.createElement('details-page');
           const productId = route.substring(route.lastIndexOf('/')+1);
           content.dataset.pid = productId;
         }
