@@ -1,9 +1,12 @@
 import Store from "./services/store.js";
-import { loadData } from "./services/menu.js";
+import Router from "./services/router.js";
+import { load } from "./services/menu.js";
 
 window.coffeemasters = {};
 coffeemasters.store = Store;
+coffeemasters.router = Router;
 
-window.addEventListener("DOMContentLoaded", () => {
-  loadData();
-});
+window.addEventListener("DOMContentLoaded", async () => {
+  load();
+  coffeemasters.router.init();
+}) ;

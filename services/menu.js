@@ -1,5 +1,5 @@
 import API from "./api.js";
 
-export async function loadData() {
+export const load = async () => {
   coffeemasters.store.menu = await API.fetchMenu();
-}
+};
