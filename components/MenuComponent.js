@@ -23,6 +23,7 @@ export class MenuComponent extends HTMLElement {
     window.addEventListener('coffeemastersmenuchange', () => {
       this.render();
     });
+    this.render();
   }
 
   render() {
