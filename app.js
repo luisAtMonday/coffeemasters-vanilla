@@ -2,11 +2,7 @@ import Store from "./services/store.js";
 import Router from "./services/router.js";
 import { load } from "./services/menu.js";
 
-import { MenuComponent } from "./components/MenuComponent.js";
-import { DetailsComponent } from "./components/DetailsComponent.js";
-import { ProductItem } from "./components/ProductItem.js";
-import { OrderPage } from "./components/OrderPage.js";
-import { CartItem } from "./components/CartItem.js";
+import ComponentRegistry from "./components/ComponentRegistry.js";
 
 window.coffeemasters = {};
 coffeemasters.store = Store;
