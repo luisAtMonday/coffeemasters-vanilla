@@ -1,3 +1,5 @@
+import { clearCart } from "../services/order.js";
+
 export class OrderPage extends HTMLElement {
 
   #user = {
@@ -15,11 +17,10 @@ export class OrderPage extends HTMLElement {
       const section = document.createElement("section");
       this.root.appendChild(section);
 
-      async function loadCSS() {
+      (async function loadCSS() {
         const request = await fetch("/components/OrderPage.css");
         styles.textContent = await request.text();
-      }
-      loadCSS();
+      })();
   }   
 
   connectedCallback() {
@@ -76,6 +77,9 @@ export class OrderPage extends HTMLElement {
               this.#user.email = "";
               this.#user.phone = "";
               // TODO Send the data to the server
+
+              // clear the cart
+              clearCart();
           })
 
           // Set double data binding
