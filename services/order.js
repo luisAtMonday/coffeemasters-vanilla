@@ -15,3 +15,7 @@ export const addToCart = async (id) => {
 export const removeFromCart = async (id) => {
   coffeemasters.store.cart = coffeemasters.store.cart.filter(p => p.product.id != id);
 };
+
+export const clearCart = () => {
+  coffeemasters.store.cart = [];
+}
